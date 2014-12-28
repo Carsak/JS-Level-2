@@ -1,0 +1,25 @@
+<!--
+Создание секундомера в title документа
+-->
+<meta charset="utf-8" />
+<script>
+	function titleToClock(){
+		var myDate = new Date();
+		var myHours = myDate.getHours().toString();
+		var myMinutes = myDate.getMinutes().toString();
+		var mySeconds = myDate.getSeconds().toString();
+		var clock = myHours + ":" + myMinutes + ":" + mySeconds;
+		document.title = clock;
+	}
+	
+	var x = 0;
+	function startMyClock(){
+		x = setInterval(titleToClock, 1000);
+	}
+	function endMyClock(){
+		clearInterval(x);
+	}
+</script>
+
+<a href="javascript:startMyClock()"> Start my clock </a> <br />
+<a href="javascript:endMyClock()"> End my clock </a>
